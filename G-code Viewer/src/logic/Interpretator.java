@@ -27,7 +27,7 @@ public class Interpretator {
 		pathLeftDown = new Point[8];
 		pathRightTop = new Point[8];
 		pathRightDown = new Point[8];
-		for (int i = 0; i < 9; i++) {
+		for (int i = 0; i < 8; i++) {
 			if (i % 2 == 0) {
 				pathLeftTop[i] = new Point(0, 0);
 				pathLeftDown[i] = new Point(0, 0);
@@ -48,25 +48,26 @@ public class Interpretator {
 				}
 			}
 		}
+		MainWindow.setPointsPath(pathLeftTop, pathLeftDown, pathRightTop, pathRightDown);
 
 	}
 
-	public Point[] getPathLeftTop() {
+	public Point[] getPathLT() {
 		return pathLeftTop;
 
 	}
 
-	public Point[] getPathLeftDown() {
+	public Point[] getPathLD() {
 		return pathLeftDown;
 
 	}
 
-	public Point[] getPathRightTop() {
+	public Point[] getPathRT() {
 		return pathRightTop;
 
 	}
 
-	public Point[] getPathRightDown() {
+	public Point[] getPathRD() {
 		return pathRightDown;
 
 	}
