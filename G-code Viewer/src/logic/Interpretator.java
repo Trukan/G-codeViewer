@@ -10,7 +10,7 @@ public class Interpretator {
 	String startLine;
 	String endLine;
 	String textCode;
-
+	int length;
 	Point[] pathLeftTop;
 	Point[] pathLeftDown;
 	Point[] pathRightTop;
@@ -22,33 +22,19 @@ public class Interpretator {
 		startLine = "";
 		endLine = "";
 		textCode = "";
-		MainWindow.setTextTrace("\t x = 0...0 \t\t\t y = 0...0 \t\t\t z = 0...0");
-		pathLeftTop = new Point[8];
-		pathLeftDown = new Point[8];
-		pathRightTop = new Point[8];
-		pathRightDown = new Point[8];
-		for (int i = 0; i < 8; i++) {
-			if (i % 2 == 0) {
-				pathLeftTop[i] = new Point(0, 0);
-				pathLeftDown[i] = new Point(0, 0);
-				pathRightTop[i] = new Point(0, 0);
-				pathRightDown[i] = new Point(0, 0);
-			} else {
-				if (i == 1 | i == 3) {
-					pathLeftTop[i] = new Point(0, (i - 2) * 5);
-					pathLeftDown[i] = new Point(0, (i - 2) * 5);
-					pathRightTop[i] = new Point(0, (i - 2) * 5);
-					pathRightDown[i] = new Point(0, (i - 2) * 5);
-				}
-				if (i == 5 | i == 7) {
-					pathLeftTop[i] = new Point((i - 6) * 5, 0);
-					pathLeftDown[i] = new Point((i - 6) * 5, 0);
-					pathRightTop[i] = new Point((i - 6) * 5, 0);
-					pathRightDown[i] = new Point((i - 6) * 5, 0);
-				}
-			}
-		}
-		MainWindow.setPointsPath(pathLeftTop, pathLeftDown, pathRightTop, pathRightDown);
+		MainWindow.setTextTrace("\t x >> 0...0 \t\t\t y >> 0...0 \t\t\t z >> 0...0");
+		
+		length = 1;
+		pathLeftTop = new Point[length];
+		pathLeftDown = new Point[length];
+		pathRightTop = new Point[length];
+		pathRightDown = new Point[length];
+		pathLeftTop[0] = new Point(0, 0);
+		pathLeftDown[0] = new Point(0, 0);
+		pathRightTop[0] = new Point(0, 0);
+		pathRightDown[0] = new Point(0, 0);
+		
+	MainWindow.setPointsPath(pathLeftTop, pathLeftDown, pathRightTop, pathRightDown);
 
 	}
 
